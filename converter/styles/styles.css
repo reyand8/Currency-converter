@@ -36,7 +36,6 @@ input[type=number] {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
