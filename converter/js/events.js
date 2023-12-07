@@ -1,9 +1,9 @@
-import { handleInputAmount, handleSubmit, switchCurrencies } from "./convert.js";
+import { handleInputAmount, handleSubmit, switchCurrencies } from "./convertAmount.js";
 import { fetchCodes, handleTabClick } from "./index.js";
 import { addCurrency, handleActionClick, handleAddSelectChange, handleSingleSelectChange,
-} from "./single.js";
+} from "./singlePage.js";
 
-import variables from "./variables.js";
+import variables from "./getElements.js";
 
 const { tabs, form, amountInput, switchButton,
     currentCurrency, currentCurrencyList, singleSelect, addButton, addCurrencySelect}

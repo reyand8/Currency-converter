@@ -1,6 +1,6 @@
 import { renderCurrencyItem } from "./markups.js";
 import state from "./state.js";
-import variables from "./variables.js";
+import variables from "./getElements.js";
 
 const { success, currentCurrency, currentCurrencyList } = variables
 

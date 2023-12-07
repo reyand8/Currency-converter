@@ -1,4 +1,4 @@
-import variables from "./variables.js";
+import variables from "./getElements.js";
 import state from "./state.js";
 import { convertTime, formatToCurrency, getFullTitle } from "./utils.js";
 import { renderResult } from "./markups.js";

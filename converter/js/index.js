@@ -1,7 +1,7 @@
-import variables from "./variables.js";
+import variables from "./getElements.js";
 import state from "./state.js";
-import { handleChangeCode } from "./convert.js";
-import { fetchLatest } from "./single.js";
+import { handleChangeCode } from "./convertAmount.js";
+import { fetchLatest } from "./singlePage.js";
 
 const { currencySelects, success, tabs } = variables
 
