@@ -25,16 +25,23 @@
                 <div class="tabs">
                     <div class="tab active" data-tab="convert">
                         <div class="tab-icon">
-                            <img src="./images/convert.svg" alt="" />
+                            <img src="./images/convert.svg" alt="convert-img" />
                         </div>
                         <div class="tab-title">Convert</div>
                     </div>
 
                     <div class="tab" data-tab="single">
                         <div class="tab-icon">
-                            <img src="./images/single.svg" alt="" />
+                            <img src="./images/single.svg" alt="single-img" />
                         </div>
                         <div class="tab-title">Single</div>
+                    </div>
+
+                    <div class="tab" data-tab="history">
+                        <div class="tab-icon">
+                            <img src="./images/history.png" alt="history-img" />
+                        </div>
+                        <div class="tab-title">History</div>
                     </div>
                 </div>
 
@@ -125,6 +132,96 @@
                         </select>
                     </div>
                 </div>
+
+
+
+
+
+
+                <div class="content" data-child="history">
+                    <form class="form">
+                        <div class="form-selects__history">
+                            <div class="form-select__currencies">
+                                <div class="form-select">
+                                    <label for="from">From</label>
+                                    <select class="form-select__curr" name="from" id="historyFrom" required>
+                                        <option value="" disabled selected hidden>
+                                            Choose currency
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-select">
+                                    <label for="to">To</label>
+                                    <select class="form-select__curr" name="to" id="historyTo" required>
+                                        <option value="" disabled selected hidden>
+                                            Choose currency
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-select__data">
+                                <div class="form-select__year select-date">
+                                    <label for="year">Year</label>
+                                    <input
+                                            type="number"
+                                            name="year"
+                                            id="year"
+                                            required
+                                            placeholder="2023"
+                                    />
+                                </div>
+                                <div class="form-select__month select-date">
+                                    <label for="month">Month</label>
+                                    <input
+                                            type="number"
+                                            name="month"
+                                            id="month"
+                                            required
+                                            placeholder="12"
+                                    />
+                                </div>
+                                <div class="form-select__day select-date">
+                                    <label for="day">Day</label>
+                                    <input
+                                            type="number"
+                                            name="day"
+                                            id="day"
+                                            required
+                                            placeholder="09"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-info">
+                            <div class="loader">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="form-results">
+                                <div class="form-result__item from" id="resultFromHistory"></div>
+
+                                <div class="form-result__equals">
+                                    <img src="./images/equals.svg" alt="" />
+                                </div>
+
+                                <div class="form-result__item to" id="resultToHistory"></div>
+                            </div>
+
+                            <button type="submit" class="form-submit">Convert</button>
+                        </div>
+                        <div class="rate-information">
+                            <div class="rate-conversion"></div>
+                            <div class="rate-last"></div>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
             </div>
         </div>
     </div>
