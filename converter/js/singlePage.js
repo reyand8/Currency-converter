@@ -58,15 +58,15 @@ const changeCurrency = () => {
     currentCurrency.parentElement.classList.add('active')
 }
 
+export const addCurrency = ({ currentTarget }) => {
+    currentTarget.parentElement.classList.add('active')
+}
+
 export const handleSingleSelectChange = ({ target }) => {
     target.parentElement.classList.remove('active')
     state.currency = { ...state.currency, code: target.value }
     fetchLatest()
     target.value = ''
-}
-
-export const addCurrency = ({ currentTarget }) => {
-    currentTarget.parentElement.classList.add('active')
 }
 
 export const handleAddSelectChange = ({ target }) => {
