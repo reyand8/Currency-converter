@@ -132,19 +132,13 @@
                         </select>
                     </div>
                 </div>
-
-
-
-
-
-
                 <div class="content" data-child="history">
-                    <form class="form">
+                    <form class="form form-history">
                         <div class="form-selects__history">
                             <div class="form-select__currencies">
                                 <div class="form-select">
                                     <label for="from">From</label>
-                                    <select class="form-select__curr" name="from" id="historyFrom" required>
+                                    <select class="select form-select__curr" name="from" id="historyFrom" required>
                                         <option value="" disabled selected hidden>
                                             Choose currency
                                         </option>
@@ -152,7 +146,7 @@
                                 </div>
                                 <div class="form-select">
                                     <label for="to">To</label>
-                                    <select class="form-select__curr" name="to" id="historyTo" required>
+                                    <select class="select form-select__curr" name="to" id="historyTo" required>
                                         <option value="" disabled selected hidden>
                                             Choose currency
                                         </option>
@@ -167,6 +161,7 @@
                                             type="number"
                                             name="year"
                                             id="year"
+                                            class="select-all-date"
                                             required
                                             placeholder="2023"
                                     />
@@ -177,6 +172,7 @@
                                             type="number"
                                             name="month"
                                             id="month"
+                                            class="select-all-date"
                                             required
                                             placeholder="12"
                                     />
@@ -187,6 +183,7 @@
                                             type="number"
                                             name="day"
                                             id="day"
+                                            class="select-all-date"
                                             required
                                             placeholder="09"
                                     />
@@ -210,7 +207,7 @@
                                 <div class="form-result__item to" id="resultToHistory"></div>
                             </div>
 
-                            <button type="submit" class="form-submit">Convert</button>
+                            <button type="submit" class="form-submit" disabled>Convert</button>
                         </div>
                         <div class="rate-information">
                             <div class="rate-conversion"></div>
@@ -218,10 +215,6 @@
                         </div>
                     </form>
                 </div>
-
-
-
-
             </div>
         </div>
     </div>
