@@ -1,6 +1,6 @@
 
 export default {
-    url: `https://v6.exchangerate-api.com/v6/{API KEY}/`,
+    url: 'https://v6.exchangerate-api.com/v6/{API KEY}/',
     codes: [],
     pair: {
         from: '',
@@ -8,13 +8,13 @@ export default {
     },
     amount: '',
     loading: false,
-    currentTab: "convert",
+    currentTab: 'convert',
     currency: {
-        code: "USD",
+        code: 'USD',
     },
-    currencies: ["USD", "EUR", "UAH"],
+    currencies: ['USD', 'EUR', 'UAH'],
     actions: {
         remove: 'remove',
         change: 'change',
     },
-}
+};

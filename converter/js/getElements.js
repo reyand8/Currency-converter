@@ -1,5 +1,5 @@
 export default {
-    success: "success",
+    success: 'success',
     currencySelects: document.querySelectorAll('.select'),
     amountInput: document.getElementById('amount'),
     form: document.querySelector('.form'),
@@ -17,4 +17,4 @@ export default {
     singleSelect: document.getElementById('singleSelect'),
     addButton: document.querySelector('.currency-add__button'),
     addCurrencySelect: document.getElementById('addCurrencySelect'),
-}
+};

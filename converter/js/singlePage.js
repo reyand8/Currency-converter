@@ -1,83 +1,83 @@
-import { renderCurrencyItem } from "./markups.js";
-import state from "./state.js";
-import variables from "./getElements.js";
+import { renderCurrencyItem } from './markups.js';
+import state from './state.js';
+import variables from './getElements.js';
 
-const { success, currentCurrency, currentCurrencyList } = variables
+const { success, currentCurrency, currentCurrencyList } = variables;
 
 
 const insertCurrencies = () => {
-    const { currency, currencies } = state
-    const { conversion_rates: rates, base_code: baseCode } = currency
-    currentCurrency.innerHTML = renderCurrencyItem(currency)
-    currentCurrencyList.innerHTML = ''
+    const { currency, currencies } = state;
+    const { conversion_rates: rates, base_code: baseCode } = currency;
+    currentCurrency.innerHTML = renderCurrencyItem(currency);
+    currentCurrencyList.innerHTML = '';
     Object.entries(rates).forEach(([code, rate]) => {
         if (code === baseCode || !currencies.includes(code))
-            return
-        insertCurrency({ ...currency, code, rate })
-    })
-}
+            return;
+        insertCurrency({ ...currency, code, rate });
+    });
+};
 
 export const fetchLatest = async () => {
-    const { url, currency: { code },} = state
+    const { url, currency: { code }} = state;
     if (!code)
-        return
+        return;
     try {
-        const response = await fetch(`${url}/latest/${code}`)
-        const data = await response.json()
+        const response = await fetch(`${url}/latest/${code}`);
+        const data = await response.json();
         if (data.result === success) {
-            state.currency = { ...state.currency, ...data }
-            insertCurrencies()
+            state.currency = { ...state.currency, ...data };
+            insertCurrencies();
         }
     } catch (err) {
-        console.log(err)
+        console.log(err);
     }
-}
+};
 
 const insertCurrency = (data) => {
-    currentCurrencyList.insertAdjacentHTML('afterbegin', renderCurrencyItem(data))
-}
+    currentCurrencyList.insertAdjacentHTML('afterbegin', renderCurrencyItem(data));
+};
 
 const removeCurrency = (target) => {
-    const parent = target.parentElement.parentElement
-    const { item } = parent.dataset
+    const parent = target.parentElement.parentElement;
+    const { item } = parent.dataset;
     if (!item)
-        return
-    const element = document.querySelector(`[data-item='${item}']`)
-    element.remove()
-}
+        return;
+    const element = document.querySelector(`[data-item='${item}']`);
+    element.remove();
+};
 
 export const handleActionClick = ({ target }) => {
-    const { action } = target.dataset
+    const { action } = target.dataset;
     if (!action)
-        return
-    const { actions: { remove }, } = state
-    action === remove ? removeCurrency(target) : changeCurrency()
-}
+        return;
+    const { actions: { remove } } = state;
+    action === remove ? removeCurrency(target) : changeCurrency();
+};
 
 const changeCurrency = () => {
-    currentCurrency.parentElement.classList.add('active')
-}
+    currentCurrency.parentElement.classList.add('active');
+};
 
 export const addCurrency = ({ currentTarget }) => {
-    currentTarget.parentElement.classList.add('active')
-}
+    currentTarget.parentElement.classList.add('active');
+};
 
 export const handleSingleSelectChange = ({ target }) => {
-    target.parentElement.classList.remove('active')
-    state.currency = { ...state.currency, code: target.value }
-    fetchLatest()
-    target.value = ''
-}
+    target.parentElement.classList.remove('active');
+    state.currency = { ...state.currency, code: target.value };
+    fetchLatest();
+    target.value = '';
+};
 
 export const handleAddSelectChange = ({ target }) => {
-    const { currency: { conversion_rates: rates, base_code: baseCode },} = state
+    const { currency: { conversion_rates: rates, base_code: baseCode }} = state;
     const currency = Object.entries(rates).find(
         ([key]) => key === target.value && key !== baseCode
-    )
+    );
     if (currency) {
-        const [code, amount] = currency
-        insertCurrency({ ...state.currency, code, rate: amount })
+        const [code, amount] = currency;
+        insertCurrency({ ...state.currency, code, rate: amount });
     }
-    target.parentElement.classList.remove('active')
-    target.value = ''
-}
+    target.parentElement.classList.remove('active');
+    target.value = '';
+};
