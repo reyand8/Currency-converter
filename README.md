@@ -20,7 +20,7 @@ will see the exchange rate of the currencies you have chosen (per unit) and the
 exchange rate for the quantity indicated by you. The date of the last update will also 
 be indicated.
 2. **Single page.** You can select the basic currency and some additional currencies for which the
-exchange will be made. It will be convenient if you want to see the exchange rate of 
+exchange will be made. It will be useful in case you want to see the exchange rate of 
 several currencies at the same time.
 
 ____
